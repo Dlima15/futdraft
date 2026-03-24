@@ -35,3 +35,25 @@ body {
                 radial-gradient(circle at 20% 80%, rgba(250, 204, 21, 0.05), transparent 40%);
     z-index: -1;
 }
+
+/* lOGO / HEADER DA PAGINA  */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.navegacao {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-area{
+    margin-top: 10vh;
+}
+
+.logo-area img{ 
+    width: 45vh;
+}
