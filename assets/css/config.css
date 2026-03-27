@@ -1,0 +1,35 @@
+:root {
+    --primaria: #22C55E;
+    --primaria-brilho: #4ADE80;
+    --secundaria: #FACC15;
+    --fundo: #0F172A;
+    --vidro: rgba(255, 255, 255, 0.03);
+    --borda: rgba(255, 255, 255, 0.08);
+    --texto: #F8FAFC;
+    --texto-apoio: #94A3B8;
+    --raio-g: 24px;
+    --raio-p: 12px;
+    --curva: cubic-bezier(0.23, 1, 0.32, 1);
+    --transicao: 0.4s var(--curva);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.fundo-gradiente{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.12), transparent 50%);
+    z-index: -1;
+}
+
