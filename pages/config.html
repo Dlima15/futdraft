@@ -10,8 +10,19 @@
 </head>
 <body>
     <div class="fundo-gradiente"></div>
+
+    <header class="cabecalho-topo">
+       <div class="container flex-cabecalho">
+            <a href="index.html" class="botao-voltar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            </a>
+            <h1 class="titulo-pagina">Configuração do Futebol</h1>
+        </div>
+    </header>
    
     <main class="container">
+        <div class="grade-configuracao">
+        
         <div class="coluna">
             <section class="cartao-vidro animar-subir">
                 <h2 class="etiqueta-grupo">Tipo de sorteio</h2>
@@ -30,10 +41,80 @@
                     </label>
                 </div>
             </section>
-        </div>
-        <div class="coluna">
+            <section class="cartao-vidro animar-subir">
+                <h2 class="etiqueta-grupo">Adicionar jogadores</h2>
+                <div class="form-adicionar">
+                    <input type="text" class="campo-texto" placeholder="Nome do jogador...">
+                    <div class="escolha-nivel">
+                        <label class="chip-nivel"><input type="radio" name="nv" value="A"><span>A</span></label>
+                        <label class="chip-nivel"><input type="radio" name="nv" value="B"><span>B</span></label>
+                        <label class="chip-nivel"><input type="radio" name="nv" value="C"><span>C</span></label>
+                    </div>
+                    <button class="botao-inserir">Adicionar Jogador na lista</button>
+                </div>
 
-        </div>
+                <div class="lista-inscritos">
+                    <div class="card-jogador animar-entrada">
+                        <span class="info">Juninho <mark>Nivel A</mark></span>
+                        <button class="remover-txt">Remover</button>
+                    </div>
+                    <div class="card-jogador animar-entrada">
+                        <span class="info">Bruninho <mark>Nivel B</mark></span>
+                        <button class="remover-txt">Remover</button>
+                    </div>
+                </div>
+            </section>
+            <div class="coluna">
+                <section class="cartao-vidro animar-subir">
+                    <h2 class="etiqueta-grupo">Estrutura da partida</h2>
+
+                    <div class="bloco-campo">
+                        <label class="legenda">Jogadores por time</label>
+                        <div class="fileira-chips">
+                            <button class="chip-ativo">5 x 5</button>
+                            <button class="chip">6 x 6</button>
+                            <button class="chip">Personalizado</button>
+                        </div>
+                    </div>
+                    <div class="bloco-campo">
+                        <label class="legenda">Total de times</label>
+                        <div class="fileira-chips">
+                            <button class="chip">2</button>
+                            <button class="chip-ativo">3</button>
+                            <button class="chip">4</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="cartao-vidro animar-subir">
+                    <h2 class="etiqueta-grupo">Tempo e Regras</h2>
+                    <div class="grade-inputs">
+                        <div class="bloco-campo">
+                            <label class="legenda">Duração da partida</label>
+                            <input type="text" class="campo-texto" placeholder="ex 10 Min">
+                        </div>
+                        <div class="bloco-campo">
+                            <label class="legenda">Critério</label>
+                            <select class="campo-texto">
+                                <option>Tempo</option>
+                                <option>Gol</option>
+                                <option>Ambos</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>  
+      </div>
+      <div class="area-acao-final">
+        <button class="botao-sorteio-master">
+            <div class="brilho-efeito"></div>
+            <span class="txt-sortear">Sortear Times</span>
+            <div class="icone-girar">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path></svg>
+            </div>
+            </button>
+      </div>
+
     </main>
 
 </body>

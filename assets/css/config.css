@@ -13,7 +13,9 @@
     --transicao: 0.4s var(--curva);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; }
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -33,3 +35,43 @@ body {
     z-index: -1;
 }
 
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cabecalho-topo{
+    padding: 30px 0;
+}
+
+.flex-cabecalho{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.titulo-pagina{
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+
+.botao-voltar{
+    background-color: var(--vidro);
+    border: 1px solid var(--borda);
+    color: var(--texto);
+    padding: 12px
+    border-radius(12px);
+    transition: var(--transicao);
+}
+
+.botao-voltar:hover {
+    transform: translateX(-5px);
+    background: var(--borda);
+}
+
+.grade-configuração{
+    
+}
