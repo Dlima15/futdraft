@@ -86,3 +86,11 @@ body {
     border-radius: var(--raio-g);
 }
 
+.etiqueta-grupo{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--primaria-brilho);
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
