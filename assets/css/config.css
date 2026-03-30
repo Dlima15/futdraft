@@ -73,5 +73,16 @@ body {
 }
 
 .grade-configuração{
-    
+    display: grid;
+    gap: 20px;
+    padding-bottom: 140px;
 }
+
+.cartao-vidro{
+    background: var(--vidro);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--borda);
+    padding: 24px;
+    border-radius: var(--raio-g);
+}
+
