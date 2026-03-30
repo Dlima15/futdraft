@@ -94,3 +94,134 @@ body {
     margin-bottom: 20px;
     letter-spacing: 1px;
 }
+
+.seletor-duplo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.item-selecionavel input{
+    display: none;
+}
+
+.botao-interno{
+    background: rgba(255, 255, 255, 0.03);
+    padding: 18px;
+    border-radius: var(--raio-p);
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transform: var(--transicao);
+    font-weight: 600;
+}
+
+.item-selecionavel input:checked + .botao-interno{
+    background: rgba(34, 197, 94, 0.08);
+    border-color: var(--primaria);
+    color: var(--primaria-brilho);
+}
+
+.form-adicionar{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.campo-texto{
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--borda);
+    padding: 18px;
+    border-radius: var(--raio-p);
+    color: white;
+    font-family: inherit;
+    outline: none;
+    transition: var(--transicao);
+}
+
+.campo-texto:focus{
+    border-color: var(--primaria);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.1);
+    
+}
+
+.escolha-nivel{
+    display: flex;
+    gap: 10px;
+}
+
+.chip-nivel{
+    flex: 1;
+    cursor: pointer;
+}
+
+.chip-nivel input{
+    display: none;
+}
+
+.chip-nivel span{
+    display: block;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: var(--transicao);
+}
+
+.chip-nivel input:checked + span{
+    background: var(--secundaria);
+    color: #000;
+}
+
+.botao-inserir{
+    background: var(--texto);
+    color: #000;
+    border: none;
+    border-radius: var(--raio-p);
+    font-weight: 800;
+    cursor: pointer;
+    padding: 18px;
+    transition: var(--transicao);
+}
+
+.botao-inserir:hover{
+    background: var(--primaria);
+    transform: scale(1.02);
+}
+
+.lista-inscritos{
+    margin-top: 25px;
+    display: grid;
+    gap: 10px;
+}
+
+.card-jogador{
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 14px 20px;
+    border-radius: var(--raio-p);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.card-jogador mark{
+    background: none;
+    color: var(--primaria-brilho);
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.remover-txt{
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.8rem;
+    
+}
