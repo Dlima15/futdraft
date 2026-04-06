@@ -3,53 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futdraft | sorteio </title>
-    <link rel="icon" type="image/x-i" href="../assets/img/futdrat-logo-app.png">
-    <link rel="stylesheet" href="../assets/css/SORTEIO.CSS">
+    <title>Futdraft | Sorteio</title>
+    <link rel="stylesheet" href="../assets/css/sorteio.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="fundo-gradiente"></div>
 
     <header class="cabecalho-topo">
         <div class="container flex-cabecalho">
-            <a href="config.html" class="botao-voltar">
+            <a href="configuracao.html" class="botao-voltar">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </a>
+            <h1 class="titulo-pagina">Times Sorteados</h1>
         </div>
     </header>
 
     <main class="container">
         <div class="grade-times-sorteados">
-
-            <div class="cartao-times borda-amarela animar-subir">
+            
+            <div class="cartao-time borda-amarela animar-subir">
                 <div class="cabecalho-card">
-                    <span class="ponto-cor fundo-amarelo">
-                        <h3>Time amarelo</h3>
-                    </span>
+                    <span class="ponto-cor fundo-amarelo"></span>
+                    <h3>Time Amarelo</h3>
                 </div>
                 <ul class="lista-nomes">
                     <li>Juninho</li>
                     <li>Carlos</li>
-                    <li>Danilo</li>
-                    <li>Pedrin</li>
+                    <li>Pedro</li>
+                    <li>Mateus</li>
                 </ul>
             </div>
+
+            <div class="cartao-time borda-azul animar-subir">
+                <div class="cabecalho-card">
+                    <span class="ponto-cor fundo-azul"></span>
+                    <h3>Time Azul</h3>
+                </div>
+                <ul class="lista-nomes">
+                    <li>Bruninho</li>
+                    <li>Henrique</li>
+                    <li>Lucas</li>
+                    <li>Felipe</li>
+                </ul>
+            </div>
+
             <div class="cartao-time borda-verde animar-subir">
                 <div class="cabecalho-card">
                     <span class="ponto-cor fundo-verde"></span>
-                    <h3>Time verde</h3>
+                    <h3>Time Verde</h3>
                 </div>
                 <ul class="lista-nomes">
                     <li>Rafael</li>
                     <li>Tiago</li>
-                    <li>Igor</li>
-                    <li>Matheus</li>
+                    <li>André</li>
+                    <li>Vitor</li>
                 </ul>
             </div>
 
-            <div class="cartao-time" borda-vermelha animar-subir>
-                   <div class="cabecalho-card">
+            <div class="cartao-time borda-vermelha animar-subir">
+                <div class="cabecalho-card">
                     <span class="ponto-cor fundo-vermelho"></span>
                     <h3>Time Vermelho</h3>
                 </div>
@@ -61,11 +75,13 @@
                 </ul>
             </div>
         </div>
+
         <section class="cartao-vidro destaque-confronto animar-subir">
             <p class="legenda-central">Quem começa jogando?</p>
             <button class="botao-secundario-sorteio">
-                <span>Sortear confronto</span>
+                <span>🎲 Sortear Confronto</span>
             </button>
+
             <div class="placar-confronto">
                 <div class="time-item">
                     <span class="sigla amarelo">AM</span>
@@ -77,7 +93,7 @@
                     <strong>Azul</strong>
                 </div>
             </div>
-
+            
             <div class="fora-da-rodada">
                 <span>Esperando:</span>
                 <p>Verde, Vermelho</p>
@@ -91,7 +107,7 @@
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"></path></svg>
             </button>
         </div>
-
     </main>
+
 </body>
 </html>

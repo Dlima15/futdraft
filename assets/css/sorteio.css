@@ -26,3 +26,80 @@ body {
     z-index: -1;
 }
 
+.grade-time-sorteados{
+    display:grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.cartao-time{
+    background: var(--vidro);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--borda);
+    padding: 20px;
+    border-radius: var(--raio-g);
+    transition: var(--transicao);
+}
+
+.cabecalho-card{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ponto-cor{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.borda-amarela { 
+    border-left: 4px solid #FACC15; 
+}
+
+.fundo-amarelo { 
+    background: #FACC15; 
+    color: #FACC15; 
+}
+
+.borda-azul { 
+    border-left: 4px solid #3B82F6; 
+}
+
+.fundo-azul { 
+    background: #3B82F6; 
+    color: #3B82F6; 
+}
+
+.borda-verde { 
+    border-left: 4px solid #22C55E; 
+}
+
+.fundo-verde { 
+    background: #22C55E; 
+    color: #22C55E; 
+}
+
+.borda-vermelha { 
+    border-left: 4px solid #EF4444; 
+}
+
+.fundo-vermelho { 
+    background: #EF4444; 
+    color: #EF4444; 
+}
+
+.lista-nomes{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.lista-nomes li{
+    font-size: 0.9rem;
+    color: var(--texto-apoio);
+    
+}
