@@ -11,3 +11,14 @@ const configPartida = {
     criterio: []
 }
 
+// selecionando valor do sorteio:
+
+const sorteio = document.getElementById("seletor");
+
+sorteio.addEventListener('change', (event) =>{
+
+    const opcaovalor = event.target.value;
+
+    console.log("sorteio escolhido " + opcaovalor)
+});
+
