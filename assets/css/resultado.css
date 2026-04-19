@@ -1,0 +1,277 @@
+:root {
+    --primaria: #22C55E;
+    --primaria-brilho: #4ADE80;
+    --secundaria: #FACC15;
+    --fundo: #0F172A;
+    --vidro: rgba(255, 255, 255, 0.03);
+    --borda-vidro: rgba(255, 255, 255, 0.08);
+    --texto: #F8FAFC;
+    --texto-apoio: #94A3B8;
+    --raio-g: 24px;
+    --raio-p: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.tela-transicao {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.luz-ambiente {
+    position: fixed;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.container-app {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 30px 20px 140px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.cabecalho-simples {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.titulo-sessao {
+    font-size: 0.8rem;
+    color: var(--texto-apoio);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+/* Card de Resultado (O que passou) */
+.card-resultado-final {
+    background: var(--vidro);
+    border: 1px solid var(--borda-vidro);
+    border-radius: var(--raio-g);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.time-resultado {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cor-time {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.fundo-amarelo {
+    background: #FACC15;
+    box-shadow: 0 0 10px #FACC15;
+}
+
+.fundo-azul {
+    background: #3B82F6;
+    box-shadow: 0 0 10px #3B82F6;
+}
+
+.placar-final {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.placar-final .num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.placar-final .divisor {
+    color: var(--borda-vidro);
+    font-weight: 900;
+}
+
+/* Próximo Jogo (O que importa agora) */
+.etiqueta-foco {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--primaria-brilho);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.duelo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.bloco-duelo {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 30px 10px;
+    border-radius: var(--raio-g);
+    text-align: center;
+    border: 1px solid var(--borda-vidro);
+    transition: all 0.4s ease;
+}
+
+.borda-neon-amarela {
+    border-bottom: 3px solid #FACC15;
+}
+
+.borda-neon-verde {
+    border-bottom: 3px solid #22C55E;
+}
+
+.sigla-duelo {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.borda-neon-amarela .sigla-duelo {
+    color: #FACC15;
+}
+
+.borda-neon-verde .sigla-duelo {
+    color: #22C55E;
+}
+
+.vs-identificador {
+    font-weight: 900;
+    color: var(--texto-apoio);
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+/* Lista de Espera */
+.secao-espera {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.titulo-espera {
+    font-size: 0.7rem;
+    color: var(--texto-apoio);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.grade-espera {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.item-espera {
+    background: var(--vidro);
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--borda-vidro);
+}
+
+.ponto {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.ponto.azul { background: #3B82F6; }
+.ponto.vermelho { background: #EF4444; }
+
+/* Botão Fixo Elite */
+.rodape-acao {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px 40px;
+    background: linear-gradient(to top, var(--fundo) 70%, transparent);
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+}
+
+.botao-proxima-partida {
+    width: 100%;
+    max-width: 410px;
+    height: 65px;
+    background: linear-gradient(135deg, #22C55E, #FACC15);
+    border: none;
+    border-radius: 20px;
+    color: #052e16;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+    transition: all 0.3s ease;
+}
+
+.botao-proxima-partida:active {
+    transform: scale(0.97);
+}
+
+/* Animações */
+@keyframes subir {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animar-subir {
+    animation: subir 0.6s ease forwards;
+}
+
+.animar-entrada {
+    animation: subir 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Responsividade Desktop */
+@media (min-width: 1024px) {
+    .container-app {
+        max-width: 1000px;
+    }
+    .duelo-container {
+        justify-content: center;
+        gap: 50px;
+    }
+    .bloco-duelo {
+        max-width: 300px;
+    }
+}
