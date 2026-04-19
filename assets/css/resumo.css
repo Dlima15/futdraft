@@ -1,0 +1,257 @@
+:root {
+    --primaria: #22C55E;
+    --primaria-brilho: #4ADE80;
+    --secundaria: #FACC15;
+    --fundo: #0F172A;
+    --vidro: rgba(255, 255, 255, 0.03);
+    --borda-vidro: rgba(255, 255, 255, 0.08);
+    --texto: #F8FAFC;
+    --texto-apoio: #94A3B8;
+    --raio-g: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.tela-resumo {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+}
+
+.luz-ambiente-vitoria {
+    position: fixed;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(250, 204, 21, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.container-app {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px 20px 140px;
+}
+
+/* Header Resumo */
+.cabecalho-resumo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.emoji-festa {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.titulo-vitoria {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.data-sessao {
+    font-size: 0.8rem;
+    color: var(--texto-apoio);
+    margin-top: 5px;
+}
+
+/* Card do Campeão */
+.card-campeao {
+    background: linear-gradient(135deg, rgba(250, 204, 21, 0.1), rgba(250, 204, 21, 0.02));
+    border: 2px solid var(--secundaria);
+    border-radius: var(--raio-g);
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.1);
+}
+
+.coroa {
+    font-size: 2rem;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.escudo-campeao {
+    width: 80px;
+    height: 80px;
+    background: var(--secundaria);
+    color: #000;
+    border-radius: 20px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.8rem;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+}
+
+.nome-campeao {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.status-campeao {
+    font-size: 0.8rem;
+    color: var(--secundaria);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.stats-rapidas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.stat-item span {
+    font-size: 0.7rem;
+    color: var(--texto-apoio);
+    text-transform: uppercase;
+}
+
+/* Tabela de Ranking */
+.titulo-tabela {
+    font-size: 0.9rem;
+    color: var(--texto-apoio);
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.tabela-vidro {
+    background: var(--vidro);
+    border: 1px solid var(--borda-vidro);
+    border-radius: var(--raio-g);
+    overflow: hidden;
+}
+
+.linha-ranking {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--borda-vidro);
+}
+
+.linha-ranking:last-child {
+    border-bottom: none;
+}
+
+.linha-ranking .pos {
+    width: 35px;
+    font-weight: 800;
+    color: var(--texto-apoio);
+}
+
+.linha-ranking .time {
+    flex: 1;
+    font-weight: 700;
+}
+
+.linha-ranking .pts {
+    font-weight: 800;
+    color: var(--primaria-brilho);
+}
+
+/* Artilheiro */
+.card-artilheiro {
+    margin-top: 20px;
+    background: var(--vidro);
+    border-radius: var(--raio-g);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--primaria);
+}
+
+.info-artilheiro .label {
+    font-size: 0.7rem;
+    color: var(--texto-apoio);
+    text-transform: uppercase;
+}
+
+.info-artilheiro .nome-jogador {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 3px;
+}
+
+.gols-count {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--primaria);
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+/* Rodapé Final */
+.rodape-reset {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.botao-novo-draft {
+    width: 100%;
+    height: 65px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botao-novo-draft:hover {
+    transform: scale(1.02);
+}
+
+.btn-texto {
+    background: none;
+    border: none;
+    color: var(--texto-apoio);
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Animações */
+@keyframes subir {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animar-subir {
+    animation: subir 0.6s ease forwards;
+}
+
+.animar-entrada {
+    animation: subir 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
