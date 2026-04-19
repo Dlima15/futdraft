@@ -1,0 +1,284 @@
+/* PALETA FUTDRAFT ELITE */
+:root {
+    --primaria: #22C55E;
+    --primaria-brilho: #4ADE80;
+    --secundaria: #FACC15;
+    --fundo: #0F172A;
+    --vidro: rgba(255, 255, 255, 0.03);
+    --borda: rgba(255, 255, 255, 0.08);
+    --texto: #F8FAFC;
+    --texto-apoio: #94A3B8;
+    --raio-g: 24px;
+    --raio-p: 12px;
+    --transicao: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body.tela-ao-vivo {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.luz-ambiente {
+    position: fixed; 
+    top: -10%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 100%; 
+    height: 50%;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.container-app {
+    width: 100%; 
+    max-width: 500px; 
+    margin: 0 auto;
+    padding: 20px 20px 140px; 
+    z-index: 1; 
+    position: relative;
+}
+
+/* Header */
+.cabecalho-minimalista { 
+    padding: 20px; 
+    border-bottom: 1px solid var(--borda); }
+
+
+.container-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; }
+
+.status-live { 
+    font-size: 1rem; 
+    font-weight: 700; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; }
+
+.ponto-blink {
+    width: 8px; 
+    height: 8px; 
+    background: #ef4444; 
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* Cronômetro Digital */
+.secao-tempo { 
+    text-align: center; 
+    margin-bottom: 30px; }
+
+.cronometro-display {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 4.5rem; 
+    font-weight: 700;
+    color: #fff; 
+    text-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.controles-tempo { 
+    display: flex; 
+    justify-content: center; 
+    gap: 12px; 
+    margin-top: 10px; }
+
+.btn-controle {
+    background: var(--vidro); 
+    border: 1px solid var(--borda);
+    color: var(--texto); 
+    padding: 12px 24px; 
+    border-radius: 14px;
+    display: flex; 
+    align-items: center;
+    gap: 8px; 
+    font-weight: 600; 
+    cursor: pointer;
+}
+
+.btn-controle:active { 
+    transform: scale(0.95); 
+}
+
+/* Placar Elite */
+.card-placar-mestre {
+    background: var(--vidro); 
+    border: 1px solid var(--borda);
+    border-radius: var(--raio-g); 
+    padding: 30px 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 25px; 
+    backdrop-filter: blur(10px);
+}
+
+.time-col { 
+    text-align: center; 
+    flex: 1; 
+}
+
+.escudo-neon {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 18px; 
+    margin: 0 auto 10px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-weight: 800; 
+    font-size: 1.2rem;
+}
+
+.escudo-neon.amarelo { 
+    background: rgba(250, 204, 21, 0.15); 
+    color: #FACC15; 
+    border: 1px solid #FACC15; 
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.3); }
+
+.escudo-neon.azul { 
+    background: rgba(59, 130, 246, 0.15); 
+    color: #3B82F6; 
+    border: 1px solid #3B82F6; 
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
+
+.nome-time { 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    color: var(--texto-apoio); 
+    text-transform: uppercase; }
+
+.placar-numeros { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+.score { 
+    font-size: 3.5rem; 
+    font-weight: 900; 
+    color: #fff;
+ }
+
+
+.vs { 
+    font-size: 0.9rem; 
+    font-weight: 800; 
+    color: var(--borda); 
+}
+
+/* Registro de Gol */
+.cartao-vidro {
+    background: var(--vidro); 
+    border: 1px solid var(--borda);
+    padding: 24px; 
+    border-radius: var(--raio-g);
+}
+
+.titulo-sessao { 
+    font-size: 0.9rem;
+    color: var(--primaria-brilho); 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.grade-selecao { 
+    display: grid; g
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px; 
+    margin-bottom: 20px;
+}
+
+.campo-seletor label { 
+    display: block;
+    font-size: 0.7rem; 
+    color: var(--texto-apoio); 
+    margin-bottom: 6px; 
+    font-weight: 600; 
+}
+
+.input-elite {
+    width: 100%; 
+    background: rgba(0,0,0,0.3); 
+    border: 1px solid var(--borda);
+    color: #fff; 
+    padding: 14px; border-radius: 12px; outline: none;
+    font-family: inherit; font-weight: 600;
+}
+
+.botao-gol-master {
+    width: 100%; 
+    height: 65px; 
+    background: var(--primaria);
+    border: none; 
+    border-radius: 18px; 
+    color: #052e16;
+    font-size: 1.2rem; 
+    font-weight: 800; 
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+    transition: var(--transicao);
+}
+.botao-gol-master:active { 
+    transform: scale(0.98); 
+    background: var(--primaria-brilho); 
+}
+
+/* Botão Finalizar */
+
+.area-finalizar { 
+    margin-top: 30px; 
+    text-align: center; 
+}
+.btn-encerrar {
+    background: none; 
+    border: 2px solid #ef4444; 
+    color: #ef4444;
+    padding: 16px 40px; 
+    border-radius: 14px; 
+    font-weight: 700;
+    cursor: pointer; 
+    transition: var(--transicao); 
+    width: 100%;
+}
+
+.btn-encerrar:hover { 
+    background: #ef4444; 
+    color: #fff; 
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container-app { 
+        max-width: 900px; 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 30px; 
+    }
+
+    .secao-tempo, .card-placar-mestre { 
+        grid-column: span 2; 
+    }
+
+    .area-finalizar { 
+        grid-column: span 2; 
+    }
+}
+
+@keyframes subir { 
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } 
+    }
+
+.animar-subir { 
+    animation: subir 0.6s ease forwards; 
+}

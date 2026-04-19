@@ -1,1 +1,92 @@
-<h1>Jogo</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futdraft | Ao Vivo</title>
+    <link rel="stylesheet" href="../assets/css/jogo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="tela-ao-vivo">
+
+    <div class="luz-ambiente"></div>
+
+    <header class="cabecalho-minimalista">
+        <div class="container-header">
+            <button class="botao-icon-voltar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <h1 class="status-live"><span class="ponto-blink"></span> Partida ao vivo ⚽</h1>
+        </div>
+    </header>
+
+    <main class="container-app">
+        
+        <section class="secao-tempo animar-subir">
+            <div class="cronometro-display">08:32</div>
+            <div class="controles-tempo">
+                <button class="btn-controle secundario">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    Pausar
+                </button>
+                <button class="btn-controle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+                    Reset
+                </button>
+            </div>
+        </section>
+
+        <section class="card-placar-mestre animar-subir" style="animation-delay: 0.1s;">
+            <div class="time-col">
+                <div class="escudo-neon amarelo">AM</div>
+                <span class="nome-time">Amarelo</span>
+            </div>
+            
+            <div class="placar-numeros">
+                <span class="score">1</span>
+                <span class="vs">x</span>
+                <span class="score">0</span>
+            </div>
+
+            <div class="time-col">
+                <div class="escudo-neon azul">AZ</div>
+                <span class="nome-time">Azul</span>
+            </div>
+        </section>
+
+        <section class="cartao-vidro registro-gol animar-subir" style="animation-delay: 0.2s;">
+            <h2 class="titulo-sessao">Registrar Gol ⚽</h2>
+            
+            <div class="grade-selecao">
+                <div class="campo-seletor">
+                    <label>Time</label>
+                    <select class="input-elite">
+                        <option>Time Amarelo</option>
+                        <option>Time Azul</option>
+                    </select>
+                </div>
+                <div class="campo-seletor">
+                    <label>Jogador</label>
+                    <select class="input-elite">
+                        <option>Juninho</option>
+                        <option>Carlos</option>
+                        <option>Bruninho</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="botao-gol-master">
+                <span>+ GOL</span>
+            </button>
+        </section>
+
+        <div class="area-finalizar">
+            <button class="btn-encerrar">
+                Encerrar Partida
+            </button>
+        </div>
+
+    </main>
+
+</body>
+</html>
