@@ -2,6 +2,10 @@
 
 console.log("Js aplicado")
 
+// secao configuracao da partida xxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
 const configPartida = {
     tipoSorteio: "aleatorio",
     jogadores: [],
