@@ -64,6 +64,25 @@ escolhaNivel.addEventListener('change', (event) =>{
     console.log("Nivel do jogador: " + nivelSelecionado);
 })
 
+// selecionando a quantidade de jogadores
+
+const quantidadeJogadores = document.getElementById('qtdJogadores');
+
+quantidadeJogadores.addEventListener('change', (event) =>{
+    const numeroJogadores = event.target.value;
+
+    console.log("Quantidade de jogadores por partida: "+ numeroJogadores)
+})
+
+// Selecionando a quantidade de times
+
+const quantidadeTimes = document.getElementById('qtdTimes');
+    quantidadeTimes.addEventListener('change', (event) =>{
+        const numeroTimes = event.target.value;
+
+        console.log('Quantidade de Times:' + numeroTimes);
+    })
+
 
 
 
