@@ -5,7 +5,6 @@ console.log("Js aplicado")
 // secao configuracao da partida xxxxxxxxxxxxxxx
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-
 const configPartida = {
     tipoSorteio: "aleatorio",
     jogadores: [],
@@ -16,19 +15,16 @@ const configPartida = {
     criterio: []
 }
 
-let listaJogadores = [
-
-]
-
 // selecionando o tipo do sorteio e ja bloqueando caso o sorteio escolhido for aleatorio
 
 const sorteio = document.getElementById("seletor");
 
 sorteio.addEventListener('change', (event) =>{
-    const opcaovalor = event.target.value;
+    configPartida.tipoSorteio = event.target.value;
+
     const containerNivel = document.getElementById('nivelJogador');
 
-    if (opcaovalor == 'aleatorio'){
+    if (tipoSorteio == 'aleatorio'){
         containerNivel.style.opacity ='0.5';
         containerNivel.style.pointerEvents = "none";
     } else{
@@ -36,10 +32,10 @@ sorteio.addEventListener('change', (event) =>{
         containerNivel.style.pointerEvents = "auto";
     }
 
-    console.log('Modo de sorteio: ' + opcaovalor)
+    console.log('Modo de sorteio: ' + tipoSorteio)
 });
 
-// selecionando os jogadores
+// selecionando os nomes dos jogadores
 
 const botaoAdicionar = document.querySelector('.botao-inserir');
 
@@ -82,6 +78,27 @@ const quantidadeTimes = document.getElementById('qtdTimes');
 
         console.log('Quantidade de Times:' + numeroTimes);
     })
+
+// Selecionando tempo e critério de partida 
+//const tempoCapturado = document.getElementById('tempo').value;
+
+// Botao sortear times com os dados geral de configuracao de partida
+
+
+const botaoSortear = document.querySelector('.botao-sorteio-master');
+
+botaoSortear.addEventListener('click', () =>{
+   const tempoCapturado = document.getElementById('tempo').value;
+
+   console.log('O tempo de partida selecionado foi de:  ' + tempoCapturado + ' minutos');
+
+   console.log('/////////////////////////////////////');
+   console.log('DADOS GERAIS DA PARTIDA');
+   console.log('/////////////////////////////////////');
+
+   console.log(configPartida);
+
+})
 
 
 
