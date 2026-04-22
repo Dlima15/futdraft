@@ -8,7 +8,6 @@ console.log("Js aplicado")
 const configPartida = {
     tipoSorteio: "aleatorio",
     jogadores: [],
-    nivel:[],
     estrutura: [],
     totalTime: [],
     tempo: [],
@@ -24,7 +23,7 @@ sorteio.addEventListener('change', (event) =>{
 
     const containerNivel = document.getElementById('nivelJogador');
 
-    if (tipoSorteio == 'aleatorio'){
+    if (configPartida.tipoSorteio == 'aleatorio'){
         containerNivel.style.opacity ='0.5';
         containerNivel.style.pointerEvents = "none";
     } else{
@@ -32,7 +31,7 @@ sorteio.addEventListener('change', (event) =>{
         containerNivel.style.pointerEvents = "auto";
     }
 
-    console.log('Modo de sorteio: ' + tipoSorteio)
+    console.log('Modo de sorteio: ' + configPartida.tipoSorteio)
 });
 
 // selecionando os nomes dos jogadores
@@ -41,24 +40,30 @@ const botaoAdicionar = document.querySelector('.botao-inserir');
 
 botaoAdicionar.addEventListener('click', () => {
     const nomeCapturado =  document.getElementById('nomeJogador').value;
+    const nivelMarcado = document.querySelector('input[name="nv"]:checked');
+
 
     if (nomeCapturado == ""){
         alert('Por favor digite o nome do jogador')
         return;
     }
-    console.log('Novo jogador: ' + nomeCapturado )
+
+    const nivelSelecionado = nivelMarcado ? nivelMarcado.value : "N/A";
+
+    const novoJogador = { 
+        nome: nomeCapturado, 
+        nivel: nivelSelecionado
+    };
+
+    configPartida.jogadores.push(novoJogador);
+    console.log("Total de Jogadores Inscritos: ", configPartida.jogadores);
+    //console.log('Jogador + nivel: ', novoJogador );
+
 
 });
 
 // selecionando o nivel do jogador 
 
-const escolhaNivel = document.querySelector('.escolha-nivel');
-
-escolhaNivel.addEventListener('change', (event) =>{
-    const nivelSelecionado = event.target.value;
-
-    console.log("Nivel do jogador: " + nivelSelecionado);
-})
 
 // selecionando a quantidade de jogadores
 
