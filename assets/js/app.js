@@ -34,11 +34,42 @@ sorteio.addEventListener('change', (event) =>{
   //  console.log('Modo de sorteio: ' + configPartida.tipoSorteio)
 });
 
+// funcao pra zerar os jogadores caso tenha algum na lista, e adiciona os jogadores apos clicar no botao adicionar
+function renderizarLista() {
+    const container = document.querySelector('.lista-inscritos');
+
+    container.innerHTML = '';
+
+    
+    configPartida.jogadores.forEach((jogador, index) => {
+        container.innerHTML += `
+        <div class="card-jogador animar-entrada">
+                <span class="info">${jogador.nome} <mark>Nível ${jogador.nivel}</mark></span>
+                <button class="remover-txt" onclick="removerJogador(${index})">Remover</button>
+        </div>
+        `;
+    });
+};
+
+//Funcao para remover o jogador da lista 
+
+function removerJogador(index) {
+    configPartida.jogadores.splice(index, 1);
+
+    renderizarLista();
+    
+}
+
+
+
+
+
 // selecionando os nomes dos jogadores
 
 const botaoAdicionar = document.querySelector('.botao-inserir');
 
 botaoAdicionar.addEventListener('click', () => {
+
     const nomeCapturado =  document.getElementById('nomeJogador').value;
     const nivelMarcado = document.querySelector('input[name="nv"]:checked');
 
@@ -56,11 +87,13 @@ botaoAdicionar.addEventListener('click', () => {
     };
 
     configPartida.jogadores.push(novoJogador);
+    renderizarLista();
  //   console.log("Total de Jogadores Inscritos: ", configPartida.jogadores);
     //console.log('Jogador + nivel: ', novoJogador );
-
-
 });
+
+    renderizarLista();
+
 
 // selecionando o nivel do jogador 
 
@@ -117,7 +150,4 @@ botaoSortear.addEventListener('click', () =>{
    console.log(configPartida);
 
 })
-
-
-
 
