@@ -8,10 +8,10 @@ console.log("Js aplicado")
 const configPartida = {
     tipoSorteio: "aleatorio",
     jogadores: [],
-    estrutura: [],
-    totalTime: [],
-    tempo: [],
-    criterio: []
+    estrutura: 5,
+    totalTime: 3,
+    tempo: 10,
+    criterio: "Tempo"
 }
 
 // selecionando o tipo do sorteio e ja bloqueando caso o sorteio escolhido for aleatorio
@@ -72,8 +72,9 @@ const quantidadeJogadores = document.getElementById('qtdJogadores');
 quantidadeJogadores.addEventListener('change', (event) =>{
     const numeroJogadores = event.target.value;
 
-    console.log("Quantidade de jogadores por partida: "+ numeroJogadores)
-})
+    console.log("Quantidade de jogadores por partida: "+ numeroJogadores);
+    configPartida.estrutura = numeroJogadores;
+});
 
 // Selecionando a quantidade de times
 
@@ -82,10 +83,8 @@ const quantidadeTimes = document.getElementById('qtdTimes');
         const numeroTimes = event.target.value;
 
         console.log('Quantidade de Times:' + numeroTimes);
+        configPartida.totalTime = numeroTimes;
     })
-
-// Selecionando tempo e critério de partida 
-//const tempoCapturado = document.getElementById('tempo').value;
 
 // Botao sortear times com os dados geral de configuracao de partida
 
@@ -95,7 +94,8 @@ const botaoSortear = document.querySelector('.botao-sorteio-master');
 botaoSortear.addEventListener('click', () =>{
    const tempoCapturado = document.getElementById('tempo').value;
 
-   console.log('O tempo de partida selecionado foi de:  ' + tempoCapturado + ' minutos');
+   console.log('Tempo:  ' + tempoCapturado + ' minutos');
+   configPartida.tempo = tempoCapturado;
 
    console.log('/////////////////////////////////////');
    console.log('DADOS GERAIS DA PARTIDA');
