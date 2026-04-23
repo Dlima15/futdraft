@@ -31,7 +31,7 @@ sorteio.addEventListener('change', (event) =>{
         containerNivel.style.pointerEvents = "auto";
     }
 
-    console.log('Modo de sorteio: ' + configPartida.tipoSorteio)
+  //  console.log('Modo de sorteio: ' + configPartida.tipoSorteio)
 });
 
 // selecionando os nomes dos jogadores
@@ -56,7 +56,7 @@ botaoAdicionar.addEventListener('click', () => {
     };
 
     configPartida.jogadores.push(novoJogador);
-    console.log("Total de Jogadores Inscritos: ", configPartida.jogadores);
+ //   console.log("Total de Jogadores Inscritos: ", configPartida.jogadores);
     //console.log('Jogador + nivel: ', novoJogador );
 
 
@@ -72,7 +72,7 @@ const quantidadeJogadores = document.getElementById('qtdJogadores');
 quantidadeJogadores.addEventListener('change', (event) =>{
     const numeroJogadores = event.target.value;
 
-    console.log("Quantidade de jogadores por partida: "+ numeroJogadores);
+ //   console.log("Quantidade de jogadores por partida: "+ numeroJogadores);
     configPartida.estrutura = numeroJogadores;
 });
 
@@ -82,7 +82,7 @@ const quantidadeTimes = document.getElementById('qtdTimes');
     quantidadeTimes.addEventListener('change', (event) =>{
         const numeroTimes = event.target.value;
 
-        console.log('Quantidade de Times:' + numeroTimes);
+ //       console.log('Quantidade de Times:' + numeroTimes);
         configPartida.totalTime = numeroTimes;
     })
 
@@ -92,7 +92,7 @@ const criterioSelecionado = document.getElementById('criterioPartida');
     criterioSelecionado.addEventListener('change', (event) =>{
         const valorCriterio = event.target.value;
 
-        console.log('Criterio de partida:' + valorCriterio);
+//       console.log('Criterio de partida:' + valorCriterio);
         configPartida.criterio = valorCriterio;
     });
 
@@ -107,7 +107,7 @@ const botaoSortear = document.querySelector('.botao-sorteio-master');
 botaoSortear.addEventListener('click', () =>{
    const tempoCapturado = document.getElementById('tempo').value;
 
-   console.log('Tempo:  ' + tempoCapturado + ' minutos');
+//   console.log('Tempo:  ' + tempoCapturado + ' minutos');
    configPartida.tempo = tempoCapturado;
 
    console.log('/////////////////////////////////////');
