@@ -86,8 +86,21 @@ const quantidadeTimes = document.getElementById('qtdTimes');
         configPartida.totalTime = numeroTimes;
     })
 
-// Botao sortear times com os dados geral de configuracao de partida
+// Pegando criterio da partida 
 
+const criterioSelecionado = document.getElementById('criterioPartida');
+    criterioSelecionado.addEventListener('change', (event) =>{
+        const valorCriterio = event.target.value;
+
+        console.log('Criterio de partida:' + valorCriterio);
+        configPartida.criterio = valorCriterio;
+    });
+
+
+
+
+
+// Botao sortear times com os dados geral de configuracao de partida
 
 const botaoSortear = document.querySelector('.botao-sorteio-master');
 
