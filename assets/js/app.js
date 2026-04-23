@@ -119,8 +119,17 @@ const quantidadeTimes = document.getElementById('qtdTimes');
         configPartida.totalTime = numeroTimes;
     })
 
-// Pegando criterio da partida 
 
+// coletando tempo de partida
+const campoTempo = document.getElementById('tempo');
+
+campoTempo.addEventListener('input', (event) => {
+    configPartida.tempo = event.target.value;
+});
+
+
+
+// Pegando criterio da partida 
 const criterioSelecionado = document.getElementById('criterioPartida');
     criterioSelecionado.addEventListener('change', (event) =>{
         const valorCriterio = event.target.value;
@@ -129,16 +138,11 @@ const criterioSelecionado = document.getElementById('criterioPartida');
         configPartida.criterio = valorCriterio;
     });
 
+
 // Botao sortear times com os dados geral de configuracao de partida
 const botaoSortear = document.querySelector('.botao-sorteio-master');
 
-
-
 botaoSortear.addEventListener('click', () =>{
-   const tempoCapturado = document.getElementById('tempo').value;
-
-//   console.log('Tempo:  ' + tempoCapturado + ' minutos');
-   configPartida.tempo = tempoCapturado;
 
    console.log('/////////////////////////////////////');
    console.log('DADOS GERAIS DA PARTIDA');
@@ -147,5 +151,3 @@ botaoSortear.addEventListener('click', () =>{
    console.log(configPartida);
 
 })
-
-
