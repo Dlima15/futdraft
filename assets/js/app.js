@@ -57,7 +57,7 @@ function removerJogador(index) {
     configPartida.jogadores.splice(index, 1);
 
     renderizarLista();
-    
+
 }
 
 
@@ -129,13 +129,10 @@ const criterioSelecionado = document.getElementById('criterioPartida');
         configPartida.criterio = valorCriterio;
     });
 
-
-
-
-
 // Botao sortear times com os dados geral de configuracao de partida
-
 const botaoSortear = document.querySelector('.botao-sorteio-master');
+
+
 
 botaoSortear.addEventListener('click', () =>{
    const tempoCapturado = document.getElementById('tempo').value;
@@ -150,4 +147,5 @@ botaoSortear.addEventListener('click', () =>{
    console.log(configPartida);
 
 })
+
 
