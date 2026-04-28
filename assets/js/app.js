@@ -144,10 +144,16 @@ const botaoSortear = document.querySelector('.botao-sorteio-master');
 
 botaoSortear.addEventListener('click', () =>{
 
+   localStorage.setItem('dadosPartida', JSON.stringify(configPartida));
+   console.log('Dados salvo no LocalStorage. Iniciando transicao...');
+
+
    console.log('/////////////////////////////////////');
    console.log('DADOS GERAIS DA PARTIDA');
    console.log('/////////////////////////////////////');
 
    console.log(configPartida);
 
+
+    window.location.href = "./sorteio.html"
 })
