@@ -1,6 +1,6 @@
 // Main JS file
 
-console.log("Js aplicado")
+console.log("APP Js aplicado")
 
 // secao configuracao da partida xxxxxxxxxxxxxxx
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
