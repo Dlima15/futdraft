@@ -36,6 +36,25 @@ if (dadosMemoria) {
     const limitePorTime = parseInt(config.estrutura);
     let times = Array.from({ length: todosTimes}, () => []);    
 
+    lista.forEach((jogador, index) => {
+        let qualTime = index % todosTimes;
+        if (times[qualTime].length < limitePorTime){
+            times[qualTime].push(jogador);
+        }
+    });
+
+
+    console.log("Sorteio finalizado ", times);
+
+
+    console.table(times);
+
+
+
+
+
+
+
 
 };
 
