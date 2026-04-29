@@ -2,19 +2,31 @@ console.log('Sorteio Js aplicado!');
 
 const dadosMemoria = localStorage.getItem('dadosPartida');
 
-if (dadosMemoria){
+if (dadosMemoria) {
     const config = JSON.parse(dadosMemoria);
-    const totalTimes = parseInt(config.totalTime);
-    const limitePorTime = parseInt(config.estrutura);
-
-let times = Array.from({length: totalTimes}, () => []);
-
-console.log(times);
-
-let lista = [...config.jogadores];
-
-console.log(lista);
 
 
-}
+    const pesoNivel = {
+        'A':1,
+        'B':2,
+        'C':3
+    };
+
+    let lista = [...config.jogadores];
+
+    if (config.tipoSorteio === "aleatorio") { // modo aleatorio abixo
+        lista.sort(() => Math.random() - 0.5);
+    }else{
+        // modo balanceado abaixo
+        lista.sort((a, b) => {
+            const nivelA = pesoNivel[a.nivel] || 0;
+            const nivelB = pesoNivel[b.nivel] || 0;
+            
+            // Ordena do maior peso para o menor
+            return (nivelB - nivelA) || (Math.random() - 0.5);
+        });
+    }
+
+    console.log('lista de jogadores', lista);
+};
 
