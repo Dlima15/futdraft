@@ -25,8 +25,17 @@ if (dadosMemoria) {
             // Ordena do maior peso para o menor
             return (nivelB - nivelA) || (Math.random() - 0.5);
         });
-    }
+    };
 
     console.log('lista de jogadores', lista);
+
+
+    // PARTE RESPONSAVEL POR DISTRIBUIR JOGADORES AOS TIMES 
+
+    const todosTimes = parseInt(config.totalTime);
+    const limitePorTime = parseInt(config.estrutura);
+    let times = Array.from({ length: todosTimes}, () => []);    
+
+
 };
 
