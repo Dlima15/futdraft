@@ -66,3 +66,48 @@ if (dadosMemoria) {
     window.location.href = "index.html";
 }
 
+// Renderizar os times para que o usuario veja 
+
+function renderizarTimes() {
+
+    const gradeTimes = document.querySelector(".grade-times-sorteados");
+    const dadosSalvos = localStorage.getItem('resultadoSorteio');
+
+    if (!dadosSalvos) {
+        console.log("Nenhum dado de sorteio encontrado");
+        return
+    }
+
+    const times = JSON.parse(dadosSalvos);
+
+    gradeTimes.innerHTML = '';
+
+    const estiloCores = {
+        "Time Amarelo": { borda: "borda-amarela", fundo: "fundo-amarelo" },
+        "Time Azul": {borda: "borda-azul", fundo: "fundo-amarelo"},
+        "Time Verde": {borda: "borda-verde", fundo: "fundo-verde"},
+        "Time Vermelho": {borda: "borda-vermelha", fundo: "fundo-vermelho"}
+    };
+
+    time.forEach(time => {
+
+
+        let listaItensHTML ="";
+        time.jogadores.forEach(jogador => {
+            listaItensHTML += `<li>${jogador.nome}</li>`;
+        });
+
+        const estilo = estiloCores[time.nomeTime] || {borda: "", fundo:"" };
+
+        // aplicar agora no html
+
+
+        
+
+    });
+
+
+
+
+
+}
