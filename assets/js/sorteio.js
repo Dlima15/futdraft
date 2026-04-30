@@ -84,12 +84,12 @@ function renderizarTimes() {
 
     const estiloCores = {
         "Time Amarelo": { borda: "borda-amarela", fundo: "fundo-amarelo" },
-        "Time Azul": {borda: "borda-azul", fundo: "fundo-amarelo"},
+        "Time Azul": {borda: "borda-azul", fundo: "fundo-azul"},
         "Time Verde": {borda: "borda-verde", fundo: "fundo-verde"},
         "Time Vermelho": {borda: "borda-vermelha", fundo: "fundo-vermelho"}
     };
 
-    time.forEach(time => {
+    times.forEach(time => {
 
 
         let listaItensHTML ="";
@@ -101,13 +101,23 @@ function renderizarTimes() {
 
         // aplicar agora no html
 
+        const cartaoHTML = `
+            <div class="cartao-time ${estilo.borda} animar-subir">
+                <div class="cabecalho-card">
+                    <span class="ponto-cor ${estilo.fundo}"></span>
+                    <h3>${time.nomeTime}</h3>
+                </div>
+                <ul class="lista-nomes">
+                    ${listaItensHTML}
+                </ul>
+            </div>
+        `;
 
+        gradeTimes.innerHTML += cartaoHTML;
         
-
     });
 
-
-
-
-
 }
+
+ // aplicando no html a função que criamos acima
+    renderizarTimes();
