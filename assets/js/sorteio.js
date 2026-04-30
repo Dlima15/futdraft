@@ -49,12 +49,20 @@ if (dadosMemoria) {
 
     console.table(times);
 
+// Salvar resultados 
 
+    const cores = ["Amarelo", "Verde", "Azul", "Vermelho"];
+    const resultadoFinal = times.map((jogadores, i) => ({
+        nomeTime: `Time ${cores[i]}`,
+        jogadores: jogadores
+    }))
 
+    localStorage.setItem('resultadoSorteio', JSON.stringify(resultadoFinal));
+    console.log('Sorteio concluido e salvo com sucesso no local Storage')
 
+}else{
+    alert("Sua partida não foi configurada ainda");
 
-
-
-
-};
+    window.location.href = "index.html";
+}
 
