@@ -120,4 +120,19 @@ function renderizarTimes() {
 }
 
  // aplicando no html a função que criamos acima
-    renderizarTimes();
+renderizarTimes();
+
+// sorteando os primeiros confrontos
+
+const btnSortearAdv = document.querySelector(".botao-secundario-sorteio");
+
+btnSortearAdv.addEventListener("click", (event) => {
+
+    const dadosPartida = localStorage.getItem("resultadoSorteio");
+    const jogoSorteio =  JSON.parse(dadosPartida);
+    console.log(jogoSorteio);
+
+});
+
+
+
