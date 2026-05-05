@@ -161,6 +161,13 @@ btnSortearAdv.addEventListener("click", (event) => {
             const time2 = nomesSorteados[1];
             const espera = nomesSorteados.slice(2); 
 
+            const estadoPartida = {
+                mandante: time1,
+                visitante: time2,
+                fila: espera,
+                vitoriaConsecutiva: 0 
+            };
+
             // APLICANDO ISSO AO HTML
 
             const nomesNoHTML = document.querySelectorAll(".time-item strong");
@@ -192,15 +199,21 @@ btnSortearAdv.addEventListener("click", (event) => {
 
             console.log("Times para o jogo: ", nomesSorteados[0], "Vs", nomesSorteados [1], "e em espera", espera);
 
+            localStorage.setItem("partidaAtual", JSON.stringify(estadoPartida));
+
+            console.log("Salvo no local storage");
     }, 1500);
 
    
 });
 
+// levando a proxima pagina 
 
-// Animação do sorteio 
+const botaoIniciarPartida = document.querySelector(".botao-sorteio-master");
 
-
+botaoIniciarPartida.addEventListener("click", (event) =>{
+    window.location.href = "./jogo.html"
+});
 
 
 

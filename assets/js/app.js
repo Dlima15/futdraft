@@ -157,3 +157,6 @@ botaoSortear.addEventListener('click', () =>{
 
     window.location.href = "./sorteio.html"
 })
+
+
+//
