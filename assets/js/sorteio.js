@@ -125,63 +125,82 @@ renderizarTimes();
 // sorteando os primeiros confrontos
 
 const btnSortearAdv = document.querySelector(".botao-secundario-sorteio");
+const loader = document.getElementById("loading-overlay");
 
 btnSortearAdv.addEventListener("click", (event) => {
 
-    const storage = localStorage.getItem("resultadoSorteio");
+    loader.style.display = "flex";
+    setTimeout(() => {
+        
+        loader.style.display = "none";
 
-    if (!storage){
-        console.error("Erro: Não encontrei nada no local storage com o nome ResultadoSOrteio");
-        return
-    }
+        const storage = localStorage.getItem("resultadoSorteio");
 
-    const timesCompletos = JSON.parse(storage);
+            if (!storage){
+                console.error("Erro: Não encontrei nada no local storage com o nome ResultadoSOrteio");
+                return
+            }
 
-    if (!Array.isArray(timesCompletos)){
-        console.error("Erro: Os dados do storage não são uma lista válida.");
-        return
-    }
+            const timesCompletos = JSON.parse(storage);
 
-    const nomeDosTimes = timesCompletos.map(time => {
-        if (time && time.nomeTime) {
-            return time.nomeTime;
-        }
-        return "Time sem nome";
-    });
+            if (!Array.isArray(timesCompletos)){
+                console.error("Erro: Os dados do storage não são uma lista válida.");
+                return
+            }
 
-    const nomesSorteados = [...nomeDosTimes].sort(() => Math.random() - 0.5);
+            const nomeDosTimes = timesCompletos.map(time => {
+                if (time && time.nomeTime) {
+                    return time.nomeTime;
+                }
+                return "Time sem nome";
+            });
 
-    const time1 = nomesSorteados[0];
-    const time2 = nomesSorteados[1];
-    const espera = nomesSorteados.slice(2); 
+            const nomesSorteados = [...nomeDosTimes].sort(() => Math.random() - 0.5);
 
-    // APLICANDO ISSO AO HTML
+            const time1 = nomesSorteados[0];
+            const time2 = nomesSorteados[1];
+            const espera = nomesSorteados.slice(2); 
 
-    const nomesNoHTML = document.querySelectorAll(".time-item strong");
-    const siglasNoHTML = document.querySelectorAll(".sigla");
-    const textoEpera =  document.querySelector(".fora-da-rodada p");
+            // APLICANDO ISSO AO HTML
 
-    nomesNoHTML[0].innerText = time1;
-    nomesNoHTML[1].innerText = time2;
+            const nomesNoHTML = document.querySelectorAll(".time-item strong");
+            const siglasNoHTML = document.querySelectorAll(".sigla");
+            const textoEpera =  document.querySelector(".fora-da-rodada p");
 
-    if (textoEpera) {
-        textoEpera.innerText = espera.join(", ")
-    }
+            const placarVisual = document.querySelector(".placar-confronto");
+            const areaEsperaVisual = document.querySelector(".fora-da-rodada");
 
-    siglasNoHTML[0].innerText = time1.split(" ").pop().substring(0, 2).toUpperCase();
-    siglasNoHTML[1].innerText = time2.split(" ").pop().substring(0, 2).toUpperCase();
+            nomesNoHTML[0].innerText = time1;
+            nomesNoHTML[1].innerText = time2;
 
-    const corTime1 = time1.split(" ").pop().toLowerCase();
-    const corTime2 = time2.split(" ").pop().toLowerCase();
+            if (textoEpera) {
+                textoEpera.innerText = espera.join(", ")
+            }
 
-    siglasNoHTML[0].className = `sigla ${corTime1}`;
-    siglasNoHTML[1].className = `sigla ${corTime2}`;
+            siglasNoHTML[0].innerText = time1.split(" ").pop().substring(0, 2).toUpperCase();
+            siglasNoHTML[1].innerText = time2.split(" ").pop().substring(0, 2).toUpperCase();
+
+            const corTime1 = time1.split(" ").pop().toLowerCase();
+            const corTime2 = time2.split(" ").pop().toLowerCase();
+
+            siglasNoHTML[0].className = `sigla ${corTime1}`;
+            siglasNoHTML[1].className = `sigla ${corTime2}`;
+
+            if (placarVisual) placarVisual.style.display = "flex";
+            if (areaEsperaVisual) areaEsperaVisual.style.display = "block";
 
 
-    console.log("Times para o jogo: ", nomesSorteados[0], "Vs", nomesSorteados [1], "e em espera", espera);
+            console.log("Times para o jogo: ", nomesSorteados[0], "Vs", nomesSorteados [1], "e em espera", espera);
 
+    }, 1500);
 
+   
 });
+
+
+// Animação do sorteio 
+
+
 
 
 
