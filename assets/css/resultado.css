@@ -94,6 +94,16 @@ body.tela-transicao {
     box-shadow: 0 0 10px #3B82F6;
 }
 
+.fundo-verde {
+    background: #22C55E;
+    box-shadow: 0 0 10px #22C55E;
+}
+
+.fundo-vermelho {
+    background: #EF4444;
+    box-shadow: 0 0 10px #EF4444;
+}
+
 .placar-final {
     display: flex;
     align-items: center;
@@ -146,6 +156,14 @@ body.tela-transicao {
     border-bottom: 3px solid #22C55E;
 }
 
+.borda-neon-azul {
+    border-bottom: 3px solid #3B82F6;
+}
+
+.borda-neon-vermelha {
+    border-bottom: 3px solid #EF4444;
+}
+
 .sigla-duelo {
     width: 50px;
     height: 50px;
@@ -165,6 +183,14 @@ body.tela-transicao {
 
 .borda-neon-verde .sigla-duelo {
     color: #22C55E;
+}
+
+.borda-neon-azul .sigla-duelo {
+    color: #3B82F6;
+}
+
+.borda-neon-vermelha .sigla-duelo {
+    color: #EF4444;
 }
 
 .vs-identificador {
@@ -211,7 +237,9 @@ body.tela-transicao {
     border-radius: 50%;
 }
 
-.ponto.azul { background: #3B82F6; }
+.ponto.amarelo  { background: #FACC15; }
+.ponto.azul     { background: #3B82F6; }
+.ponto.verde    { background: #22C55E; }
 .ponto.vermelho { background: #EF4444; }
 
 /* Botão Fixo Elite */
@@ -223,7 +251,8 @@ body.tela-transicao {
     padding: 30px 20px 40px;
     background: linear-gradient(to top, var(--fundo) 70%, transparent);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     z-index: 100;
 }
 
@@ -246,6 +275,26 @@ body.tela-transicao {
 
 .botao-proxima-partida:active {
     transform: scale(0.97);
+}
+
+.btn-finalizar-torneio {
+    display: block;
+    width: 100%;
+    max-width: 410px;
+    margin: 12px auto 0;
+    background: none;
+    border: none;
+    color: var(--texto-apoio);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.btn-finalizar-torneio:hover {
+    color: #ef4444;
 }
 
 /* Animações */
