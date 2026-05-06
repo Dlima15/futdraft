@@ -21,9 +21,9 @@
     </header>
 
     <main class="container-app">
-        
+
         <section class="secao-tempo animar-subir">
-            <div class="cronometro-display">08:32</div>
+            <div class="cronometro-display">10:00</div>
             <div class="controles-tempo">
                 <button class="btn-controle secundario">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -38,39 +38,34 @@
 
         <section class="card-placar-mestre animar-subir" style="animation-delay: 0.1s;">
             <div class="time-col">
-                <div class="escudo-neon amarelo">AM</div>
-                <span class="nome-time">Amarelo</span>
+                <div id="escudo-mandante" class="escudo-neon amarelo">AM</div>
+                <span id="nome-mandante" class="nome-time">Amarelo</span>
             </div>
-            
+
             <div class="placar-numeros">
-                <span class="score">1</span>
+                <span id="gol-mandante" class="score">0</span>
                 <span class="vs">x</span>
-                <span class="score">0</span>
+                <span id="gol-visitante" class="score">0</span>
             </div>
 
             <div class="time-col">
-                <div class="escudo-neon azul">AZ</div>
-                <span class="nome-time">Azul</span>
+                <div id="escudo-visitante" class="escudo-neon azul">AZ</div>
+                <span id="nome-visitante" class="nome-time">Azul</span>
             </div>
         </section>
 
         <section class="cartao-vidro registro-gol animar-subir" style="animation-delay: 0.2s;">
             <h2 class="titulo-sessao">Registrar Gol</h2>
-            
+
             <div class="grade-selecao">
                 <div class="campo-seletor">
                     <label>Time</label>
-                    <select class="input-elite">
-                        <option>Time Amarelo</option>
-                        <option>Time Azul</option>
-                    </select>
+                    <select id="select-time" class="input-elite"></select>
                 </div>
                 <div class="campo-seletor">
                     <label>Jogador</label>
-                    <select class="input-elite">
-                        <option>Juninho</option>
-                        <option>Carlos</option>
-                        <option>Bruninho</option>
+                    <select id="select-jogador" class="input-elite">
+                        <option value="">Selecionar jogador</option>
                     </select>
                 </div>
             </div>
@@ -87,6 +82,7 @@
         </div>
 
     </main>
-<script defer src="../assets/js/jogo.js"></script>
+
+    <script defer src="../assets/js/jogo.js"></script>
 </body>
 </html>
