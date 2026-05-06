@@ -47,12 +47,6 @@ body.tela-resumo {
     margin-bottom: 30px;
 }
 
-.emoji-festa {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 10px;
-}
-
 .titulo-vitoria {
     font-size: 1.5rem;
     font-weight: 800;
@@ -75,14 +69,6 @@ body.tela-resumo {
     position: relative;
     margin-bottom: 30px;
     box-shadow: 0 0 30px rgba(250, 204, 21, 0.1);
-}
-
-.coroa {
-    font-size: 2rem;
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .escudo-campeao {
