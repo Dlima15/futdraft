@@ -20,6 +20,7 @@ const sorteio = document.getElementById("seletor");
 
 sorteio.addEventListener('change', (event) =>{
     configPartida.tipoSorteio = event.target.value;
+    validarFormulario();
 
     const containerNivel = document.getElementById('nivelJogador');
 
@@ -35,15 +36,25 @@ sorteio.addEventListener('change', (event) =>{
 });
 
 // funcao pra zerar os jogadores caso tenha algum na lista, e adiciona os jogadores apos clicar no botao adicionar
-function renderizarLista() {
+function mostrarToast(nome) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-confirmacao';
+    toast.innerHTML = `<span class="toast-icone">✓</span> <strong>${nome}</strong> adicionado!`;
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.classList.add('toast-saindo'), 2200);
+    setTimeout(() => toast.remove(), 2650);
+}
+
+function renderizarLista(novoAdicionado = false) {
     const container = document.querySelector('.lista-inscritos');
 
     container.innerHTML = '';
 
-    
     configPartida.jogadores.forEach((jogador, index) => {
+        const classe = (novoAdicionado && index === 0) ? 'card-novo' : 'animar-entrada';
         container.innerHTML += `
-        <div class="card-jogador animar-entrada">
+        <div class="card-jogador ${classe}">
                 <span class="info">${jogador.nome} <mark>Nível ${jogador.nivel}</mark></span>
                 <button class="remover-txt" onclick="removerJogador(${index})">Remover</button>
         </div>
@@ -51,13 +62,23 @@ function renderizarLista() {
     });
 };
 
-//Funcao para remover o jogador da lista 
+//Funcao para remover o jogador da lista
 
 function removerJogador(index) {
     configPartida.jogadores.splice(index, 1);
-
     renderizarLista();
+    validarFormulario();
+}
 
+function validarFormulario() {
+    const btn = document.querySelector('.botao-sorteio-master');
+    const tipoOk     = !!document.querySelector('input[name="tipo_sorteio"]:checked');
+    const jogadoresOk = configPartida.jogadores.length > 0;
+    const estruturaOk = !!document.querySelector('input[name="qtdJogadores"]:checked');
+    const timesOk     = !!document.querySelector('input[name="qtdTimes"]:checked');
+    const tempoOk     = Number(configPartida.tempo) > 0;
+
+    btn.disabled = !(tipoOk && jogadoresOk && estruturaOk && timesOk && tempoOk);
 }
 
 
@@ -86,16 +107,20 @@ botaoAdicionar.addEventListener('click', () => {
         nivel: nivelSelecionado
     };
 
-    configPartida.jogadores.push(novoJogador);
-    renderizarLista();
+    configPartida.jogadores.unshift(novoJogador);
+    renderizarLista(true);
+    mostrarToast(nomeCapturado);
+    document.getElementById('nomeJogador').value = '';
+    validarFormulario();
  //   console.log("Total de Jogadores Inscritos: ", configPartida.jogadores);
     //console.log('Jogador + nivel: ', novoJogador );
 });
 
     renderizarLista();
+    validarFormulario();
 
 
-// selecionando o nivel do jogador 
+// selecionando o nivel do jogador
 
 
 // selecionando a quantidade de jogadores
@@ -107,6 +132,7 @@ quantidadeJogadores.addEventListener('change', (event) =>{
 
  //   console.log("Quantidade de jogadores por partida: "+ numeroJogadores);
     configPartida.estrutura = numeroJogadores;
+    validarFormulario();
 });
 
 // Selecionando a quantidade de times
@@ -117,6 +143,7 @@ const quantidadeTimes = document.getElementById('qtdTimes');
 
  //       console.log('Quantidade de Times:' + numeroTimes);
         configPartida.totalTime = numeroTimes;
+        validarFormulario();
     })
 
 
@@ -125,6 +152,7 @@ const campoTempo = document.getElementById('tempo');
 
 campoTempo.addEventListener('input', (event) => {
     configPartida.tempo = event.target.value;
+    validarFormulario();
 });
 
 
